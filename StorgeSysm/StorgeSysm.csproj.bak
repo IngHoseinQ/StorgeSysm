@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BACE83CC-A44A-447C-B223-02DA32B4C1FE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>StorgeSysm</RootNamespace>
+    <AssemblyName>StorgeSysm</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>warehouse.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch">
+      <HintPath>..\..\..\..\Downloads\Compressed\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v23.2.Export, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v23.2.UI, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v23.2.Extensions, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v23.2.Core.Desktop, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\..\Downloads\Compressed\PcWonderland.com_Guna_UI_Framework_Ultimate_2\PcWonderland.com_Guna_UI_Framework_Ultimate_2\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\Downloads\Compressed\PcWonderland.com_Guna_UI_Framework_Ultimate_2\PcWonderland.com_Guna_UI_Framework_Ultimate_2\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\com.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BL\com.Designer.cs">
+      <DependentUpon>com.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BL\outs.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BL\outs.Designer.cs">
+      <DependentUpon>outs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compart.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coustmer.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ui\colect_part.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms_ui\colect_part.Designer.cs">
+      <DependentUpon>colect_part.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ui\home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms_ui\home.Designer.cs">
+      <DependentUpon>home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ui\incoming.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms_ui\incoming.Designer.cs">
+      <DependentUpon>incoming.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ui\outsale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms_ui\outsale.Designer.cs">
+      <DependentUpon>outsale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ui\storge.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms_ui\storge.Designer.cs">
+      <DependentUpon>storge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ui\sttings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms_ui\sttings.Designer.cs">
+      <DependentUpon>sttings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ui\users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms_ui\users.Designer.cs">
+      <DependentUpon>users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_addS\add_mord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_addS\add_mord.Designer.cs">
+      <DependentUpon>add_mord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_addS\Add_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_addS\Add_User.Designer.cs">
+      <DependentUpon>Add_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_addS\add_zpon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_addS\add_zpon.Designer.cs">
+      <DependentUpon>add_zpon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_addS\Form_AddINC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_addS\Form_AddINC.Designer.cs">
+      <DependentUpon>Form_AddINC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_addS\Form_AddOUTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_addS\Form_AddOUTC.Designer.cs">
+      <DependentUpon>Form_AddOUTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_addS\Form_AddP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_addS\Form_AddP.Designer.cs">
+      <DependentUpon>Form_AddP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_addS\Form_AddS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_addS\Form_AddS.Designer.cs">
+      <DependentUpon>Form_AddS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Incoming.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Outsale.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Parts.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Start\Chose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start\Chose.Designer.cs">
+      <DependentUpon>Chose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Start\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Start\Singup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start\Singup.Designer.cs">
+      <DependentUpon>Singup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Start\Star.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start\Star.Designer.cs">
+      <DependentUpon>Star.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STORAGE.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sttings\AddT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sttings\AddT.Designer.cs">
+      <DependentUpon>AddT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sttings\AddW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sttings\AddW.Designer.cs">
+      <DependentUpon>AddW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sttings\SttingCon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sttings\SttingCon.Designer.cs">
+      <DependentUpon>SttingCon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sttings\Type_prices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sttings\Type_prices.Designer.cs">
+      <DependentUpon>Type_prices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sttings\Unitss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sttings\Unitss.Designer.cs">
+      <DependentUpon>Unitss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Type_Price.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Units.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_type.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BL\com.resx">
+      <DependentUpon>com.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BL\outs.resx">
+      <DependentUpon>outs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ui\colect_part.resx">
+      <DependentUpon>colect_part.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ui\home.resx">
+      <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ui\incoming.resx">
+      <DependentUpon>incoming.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ui\outsale.resx">
+      <DependentUpon>outsale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ui\storge.resx">
+      <DependentUpon>storge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ui\sttings.resx">
+      <DependentUpon>sttings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ui\users.resx">
+      <DependentUpon>users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_addS\add_mord.resx">
+      <DependentUpon>add_mord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_addS\Add_User.resx">
+      <DependentUpon>Add_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_addS\add_zpon.resx">
+      <DependentUpon>add_zpon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_addS\Form_AddINC.resx">
+      <DependentUpon>Form_AddINC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_addS\Form_AddOUTC.resx">
+      <DependentUpon>Form_AddOUTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_addS\Form_AddP.resx">
+      <DependentUpon>Form_AddP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_addS\Form_AddS.resx">
+      <DependentUpon>Form_AddS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Start\Chose.resx">
+      <DependentUpon>Chose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start\Singup.resx">
+      <DependentUpon>Singup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start\Star.resx">
+      <DependentUpon>Star.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sttings\AddT.resx">
+      <DependentUpon>AddT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sttings\AddW.resx">
+      <DependentUpon>AddW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sttings\SttingCon.resx">
+      <DependentUpon>SttingCon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sttings\Type_prices.resx">
+      <DependentUpon>Type_prices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sttings\Unitss.resx">
+      <DependentUpon>Unitss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weather_sunny.svg" />
+    <None Include="Resources\weather_moon.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Font\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grouplabels.svg" />
+    <None Include="Resources\currency.svg" />
+    <None Include="Resources\bo_audit_changehistory.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\newproduct.svg" />
+    <None Include="Resources\borderinsidehorizontal.svg" />
+    <Content Include="warehouse.ico" />
+    <None Include="Resources\managedatasource.svg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

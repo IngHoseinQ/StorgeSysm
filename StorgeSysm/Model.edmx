@@ -1,0 +1,899 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SyStorgeDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Compart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_coms" Type="int" />
+          <Property Name="Id_part" Type="int" />
+          <Property Name="Add_parts" Type="int" />
+          <Property Name="Id_typ" Type="int" />
+          <Property Name="Add_one" Type="float" />
+          <Property Name="Other_pri" Type="float" />
+          <Property Name="price_mins" Type="float" />
+          <Property Name="Add_all" Type="float" />
+          <Property Name="Num_mars" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id_unit" Type="int" />
+          <Property Name="Nots" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Coustmer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Coustmer_Date" Type="datetime" />
+          <Property Name="Coustmer_Name" Type="varchar" MaxLength="50" />
+          <Property Name="other_pr" Type="float" />
+          <Property Name="Id_typ" Type="int" />
+          <Property Name="totle_pice_min" Type="float" />
+          <Property Name="totle_pice" Type="float" />
+          <Property Name="Coustmer_Entity" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="int" />
+        </EntityType>
+        <EntityType Name="Incoming">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Incoming_Date" Type="datetime" />
+          <Property Name="Supplier_Name" Type="varchar" MaxLength="50" />
+          <Property Name="other_pr" Type="float" />
+          <Property Name="Id_typ" Type="int" />
+          <Property Name="totle_pice_min" Type="float" />
+          <Property Name="totle_pice" Type="float" />
+          <Property Name="Supplier_Entity" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="int" />
+        </EntityType>
+        <EntityType Name="Outsale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_cost" Type="int" />
+          <Property Name="Id_Part" Type="int" />
+          <Property Name="Id_Unit" Type="int" />
+          <Property Name="Qut_sell" Type="int" />
+          <Property Name="Sell_price" Type="float" />
+          <Property Name="Sell_all_price" Type="float" />
+          <Property Name="Sell_price_min" Type="float" />
+          <Property Name="Id_typ" Type="int" />
+          <Property Name="Other_pr" Type="float" />
+          <Property Name="Nots" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Parts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Part_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="storge_id" Type="int" />
+        </EntityType>
+        <EntityType Name="STORAGE">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KeeperName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="deckTitle" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Type_Price">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Type" Type="float" />
+        </EntityType>
+        <EntityType Name="Units">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="unit_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="User_type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fullname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Users_type" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SyStorgeData.dbo.View' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Part_Name" />
+            <PropertyRef Name="Allbuy" />
+            <PropertyRef Name="AllbuyPrice" />
+            <PropertyRef Name="Allsell" />
+            <PropertyRef Name="AllsellPrice" />
+            <PropertyRef Name="StoreName" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Part_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="unit_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Allbuy" Type="int" Nullable="false" />
+          <Property Name="AllbuyPrice" Type="float" Nullable="false" />
+          <Property Name="Total_Parts" Type="int" />
+          <Property Name="Total_Pris" Type="float" />
+          <Property Name="Allsell" Type="int" Nullable="false" />
+          <Property Name="AllsellPrice" Type="float" Nullable="false" />
+          <Property Name="StoreName" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Incoming_Parts">
+          <End Role="Parts" Type="Self.Parts" Multiplicity="0..1" />
+          <End Role="Compart" Type="Self.Compart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compart">
+              <PropertyRef Name="Id_part" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Outsale_Parts">
+          <End Role="Parts" Type="Self.Parts" Multiplicity="0..1" />
+          <End Role="Outsale" Type="Self.Outsale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outsale">
+              <PropertyRef Name="Id_Part" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parts_Coustmer">
+          <End Role="Coustmer" Type="Self.Coustmer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Outsale" Type="Self.Outsale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coustmer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outsale">
+              <PropertyRef Name="Id_cost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parts_Incoming">
+          <End Role="Incoming" Type="Self.Incoming" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Compart" Type="Self.Compart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Incoming">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compart">
+              <PropertyRef Name="Id_coms" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parts_Storge">
+          <End Role="STORAGE" Type="Self.STORAGE" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Parts" Type="Self.Parts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STORAGE">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Parts">
+              <PropertyRef Name="storge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ty_com">
+          <End Role="Type_Price" Type="Self.Type_Price" Multiplicity="0..1" />
+          <End Role="Incoming" Type="Self.Incoming" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Price">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incoming">
+              <PropertyRef Name="Id_typ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ty_out">
+          <End Role="Type_Price" Type="Self.Type_Price" Multiplicity="0..1" />
+          <End Role="Coustmer" Type="Self.Coustmer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Price">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Coustmer">
+              <PropertyRef Name="Id_typ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ty_OutParts">
+          <End Role="Type_Price" Type="Self.Type_Price" Multiplicity="0..1" />
+          <End Role="Outsale" Type="Self.Outsale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Price">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outsale">
+              <PropertyRef Name="Id_typ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ty_Parts">
+          <End Role="Type_Price" Type="Self.Type_Price" Multiplicity="0..1" />
+          <End Role="Compart" Type="Self.Compart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Price">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compart">
+              <PropertyRef Name="Id_typ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unit_OutParts">
+          <End Role="Units" Type="Self.Units" Multiplicity="0..1" />
+          <End Role="Outsale" Type="Self.Outsale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Units">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outsale">
+              <PropertyRef Name="Id_Unit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unit_Parts">
+          <End Role="Units" Type="Self.Units" Multiplicity="0..1" />
+          <End Role="Compart" Type="Self.Compart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Units">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compart">
+              <PropertyRef Name="Id_unit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SyStorgeDataModelStoreContainer">
+          <EntitySet Name="Compart" EntityType="Self.Compart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Coustmer" EntityType="Self.Coustmer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Incoming" EntityType="Self.Incoming" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Outsale" EntityType="Self.Outsale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parts" EntityType="Self.Parts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STORAGE" EntityType="Self.STORAGE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type_Price" EntityType="Self.Type_Price" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Units" EntityType="Self.Units" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_type" EntityType="Self.User_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View" EntityType="Self.View" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View].[Id] AS [Id], 
+    [View].[Part_Name] AS [Part_Name], 
+    [View].[unit_name] AS [unit_name], 
+    [View].[Allbuy] AS [Allbuy], 
+    [View].[AllbuyPrice] AS [AllbuyPrice], 
+    [View].[Total_Parts] AS [Total_Parts], 
+    [View].[Total_Pris] AS [Total_Pris], 
+    [View].[Allsell] AS [Allsell], 
+    [View].[AllsellPrice] AS [AllsellPrice], 
+    [View].[StoreName] AS [StoreName]
+    FROM [dbo].[View] AS [View]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Incoming_Parts" Association="Self.FK_Incoming_Parts">
+            <End Role="Parts" EntitySet="Parts" />
+            <End Role="Compart" EntitySet="Compart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Outsale_Parts" Association="Self.FK_Outsale_Parts">
+            <End Role="Parts" EntitySet="Parts" />
+            <End Role="Outsale" EntitySet="Outsale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parts_Coustmer" Association="Self.FK_Parts_Coustmer">
+            <End Role="Coustmer" EntitySet="Coustmer" />
+            <End Role="Outsale" EntitySet="Outsale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parts_Incoming" Association="Self.FK_Parts_Incoming">
+            <End Role="Incoming" EntitySet="Incoming" />
+            <End Role="Compart" EntitySet="Compart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parts_Storge" Association="Self.FK_Parts_Storge">
+            <End Role="STORAGE" EntitySet="STORAGE" />
+            <End Role="Parts" EntitySet="Parts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ty_com" Association="Self.FK_Ty_com">
+            <End Role="Type_Price" EntitySet="Type_Price" />
+            <End Role="Incoming" EntitySet="Incoming" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ty_out" Association="Self.FK_Ty_out">
+            <End Role="Type_Price" EntitySet="Type_Price" />
+            <End Role="Coustmer" EntitySet="Coustmer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ty_OutParts" Association="Self.FK_Ty_OutParts">
+            <End Role="Type_Price" EntitySet="Type_Price" />
+            <End Role="Outsale" EntitySet="Outsale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ty_Parts" Association="Self.FK_Ty_Parts">
+            <End Role="Type_Price" EntitySet="Type_Price" />
+            <End Role="Compart" EntitySet="Compart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unit_OutParts" Association="Self.FK_Unit_OutParts">
+            <End Role="Units" EntitySet="Units" />
+            <End Role="Outsale" EntitySet="Outsale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unit_Parts" Association="Self.FK_Unit_Parts">
+            <End Role="Units" EntitySet="Units" />
+            <End Role="Compart" EntitySet="Compart" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SyStorgeDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Compart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_coms" Type="Int32" />
+          <Property Name="Id_part" Type="Int32" />
+          <Property Name="Add_parts" Type="Int32" />
+          <Property Name="Id_typ" Type="Int32" />
+          <Property Name="Add_one" Type="Double" />
+          <Property Name="Other_pri" Type="Double" />
+          <Property Name="price_mins" Type="Double" />
+          <Property Name="Add_all" Type="Double" />
+          <Property Name="Num_mars" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id_unit" Type="Int32" />
+          <Property Name="Nots" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Parts" Relationship="Self.FK_Incoming_Parts" FromRole="Compart" ToRole="Parts" />
+          <NavigationProperty Name="Incoming" Relationship="Self.FK_Parts_Incoming" FromRole="Compart" ToRole="Incoming" />
+          <NavigationProperty Name="Type_Price" Relationship="Self.FK_Ty_Parts" FromRole="Compart" ToRole="Type_Price" />
+          <NavigationProperty Name="Units" Relationship="Self.FK_Unit_Parts" FromRole="Compart" ToRole="Units" />
+        </EntityType>
+        <EntityType Name="Incoming">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Incoming_Date" Type="DateTime" Precision="3" />
+          <Property Name="Supplier_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Supplier_Entity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="Int32" DefaultValue="0" />
+          <NavigationProperty Name="Compart" Relationship="Self.FK_Parts_Incoming" FromRole="Incoming" ToRole="Compart" />
+          <Property Name="totle_pice_min" Type="Double" />
+          <Property Name="totle_pice" Type="Double" />
+          <Property Name="other_pr" Type="Double" />
+          <Property Name="Id_typ" Type="Int32" />
+          <NavigationProperty Name="Type_Price" Relationship="SyStorgeDataModel.FK_Ty_com" FromRole="Incoming" ToRole="Type_Price" />
+        </EntityType>
+        <EntityType Name="Parts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Part_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="storge_id" Type="Int32" />
+          <NavigationProperty Name="Compart" Relationship="Self.FK_Incoming_Parts" FromRole="Parts" ToRole="Compart" />
+          <NavigationProperty Name="STORAGE" Relationship="Self.FK_Parts_Storge" FromRole="Parts" ToRole="STORAGE" />
+          <NavigationProperty Name="Outsale" Relationship="SyStorgeDataModel.FK_Outsale_Parts" FromRole="Parts" ToRole="Outsale" />
+        </EntityType>
+        <EntityType Name="STORAGE">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KeeperName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="deckTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Parts" Relationship="Self.FK_Parts_Storge" FromRole="STORAGE" ToRole="Parts" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Type_Price">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Type" Type="Double" />
+          <NavigationProperty Name="Compart" Relationship="Self.FK_Ty_Parts" FromRole="Type_Price" ToRole="Compart" />
+          <NavigationProperty Name="Outsale" Relationship="SyStorgeDataModel.FK_Ty_OutParts" FromRole="Type_Price" ToRole="Outsale" />
+          <NavigationProperty Name="Coustmer" Relationship="SyStorgeDataModel.FK_Ty_out" FromRole="Type_Price" ToRole="Coustmer" />
+          <NavigationProperty Name="Incoming" Relationship="SyStorgeDataModel.FK_Ty_com" FromRole="Type_Price" ToRole="Incoming" />
+        </EntityType>
+        <EntityType Name="Units">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="unit_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Compart" Relationship="Self.FK_Unit_Parts" FromRole="Units" ToRole="Compart" />
+          <NavigationProperty Name="Outsale" Relationship="SyStorgeDataModel.FK_Unit_OutParts" FromRole="Units" ToRole="Outsale" />
+        </EntityType>
+        <EntityType Name="User_type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Users_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Incoming_Parts">
+          <End Role="Parts" Type="Self.Parts" Multiplicity="0..1" />
+          <End Role="Compart" Type="Self.Compart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compart">
+              <PropertyRef Name="Id_part" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parts_Incoming">
+          <End Role="Incoming" Type="Self.Incoming" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Compart" Type="Self.Compart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Incoming">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compart">
+              <PropertyRef Name="Id_coms" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ty_Parts">
+          <End Role="Type_Price" Type="Self.Type_Price" Multiplicity="0..1" />
+          <End Role="Compart" Type="Self.Compart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Price">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compart">
+              <PropertyRef Name="Id_typ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unit_Parts">
+          <End Role="Units" Type="Self.Units" Multiplicity="0..1" />
+          <End Role="Compart" Type="Self.Compart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Units">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compart">
+              <PropertyRef Name="Id_unit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parts_Storge">
+          <End Role="STORAGE" Type="Self.STORAGE" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Parts" Type="Self.Parts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STORAGE">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Parts">
+              <PropertyRef Name="storge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SyStorgeDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Compart" EntityType="Self.Compart" />
+          <EntitySet Name="Incoming" EntityType="Self.Incoming" />
+          <EntitySet Name="Parts" EntityType="Self.Parts" />
+          <EntitySet Name="STORAGE" EntityType="Self.STORAGE" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Type_Price" EntityType="Self.Type_Price" />
+          <EntitySet Name="Units" EntityType="Self.Units" />
+          <EntitySet Name="User_type" EntityType="Self.User_type" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_Incoming_Parts" Association="Self.FK_Incoming_Parts">
+            <End Role="Parts" EntitySet="Parts" />
+            <End Role="Compart" EntitySet="Compart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parts_Incoming" Association="Self.FK_Parts_Incoming">
+            <End Role="Incoming" EntitySet="Incoming" />
+            <End Role="Compart" EntitySet="Compart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ty_Parts" Association="Self.FK_Ty_Parts">
+            <End Role="Type_Price" EntitySet="Type_Price" />
+            <End Role="Compart" EntitySet="Compart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unit_Parts" Association="Self.FK_Unit_Parts">
+            <End Role="Units" EntitySet="Units" />
+            <End Role="Compart" EntitySet="Compart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parts_Storge" Association="Self.FK_Parts_Storge">
+            <End Role="STORAGE" EntitySet="STORAGE" />
+            <End Role="Parts" EntitySet="Parts" />
+          </AssociationSet>
+          <EntitySet Name="Coustmer" EntityType="SyStorgeDataModel.Coustmer" />
+          <EntitySet Name="Outsale" EntityType="SyStorgeDataModel.Outsale" />
+          <AssociationSet Name="FK_Parts_Coustmer" Association="SyStorgeDataModel.FK_Parts_Coustmer">
+            <End Role="Coustmer" EntitySet="Coustmer" />
+            <End Role="Outsale" EntitySet="Outsale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Outsale_Parts" Association="SyStorgeDataModel.FK_Outsale_Parts">
+            <End Role="Parts" EntitySet="Parts" />
+            <End Role="Outsale" EntitySet="Outsale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ty_OutParts" Association="SyStorgeDataModel.FK_Ty_OutParts">
+            <End Role="Type_Price" EntitySet="Type_Price" />
+            <End Role="Outsale" EntitySet="Outsale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unit_OutParts" Association="SyStorgeDataModel.FK_Unit_OutParts">
+            <End Role="Units" EntitySet="Units" />
+            <End Role="Outsale" EntitySet="Outsale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ty_out" Association="SyStorgeDataModel.FK_Ty_out">
+            <End Role="Type_Price" EntitySet="Type_Price" />
+            <End Role="Coustmer" EntitySet="Coustmer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ty_com" Association="SyStorgeDataModel.FK_Ty_com">
+            <End Role="Type_Price" EntitySet="Type_Price" />
+            <End Role="Incoming" EntitySet="Incoming" />
+          </AssociationSet>
+          <EntitySet Name="View" EntityType="SyStorgeDataModel.View" />
+          </EntityContainer>
+        <EntityType Name="Coustmer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Coustmer_Date" Type="DateTime" Precision="3" />
+          <Property Name="Coustmer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="totle_pice_min" Type="Double" />
+          <Property Name="totle_pice" Type="Double" />
+          <Property Name="Coustmer_Entity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="Int32" DefaultValue="0" />
+          <NavigationProperty Name="Outsale" Relationship="SyStorgeDataModel.FK_Parts_Coustmer" FromRole="Coustmer" ToRole="Outsale" />
+          <Property Name="other_pr" Type="Double" />
+          <Property Name="Id_typ" Type="Int32" />
+          <NavigationProperty Name="Type_Price" Relationship="SyStorgeDataModel.FK_Ty_out" FromRole="Coustmer" ToRole="Type_Price" />
+        </EntityType>
+        <EntityType Name="Outsale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_cost" Type="Int32" />
+          <Property Name="Id_Part" Type="Int32" />
+          <Property Name="Id_Unit" Type="Int32" />
+          <Property Name="Qut_sell" Type="Int32" />
+          <Property Name="Sell_price" Type="Double" />
+          <Property Name="Sell_all_price" Type="Double" />
+          <Property Name="Sell_price_min" Type="Double" />
+          <Property Name="Id_typ" Type="Int32" />
+          <Property Name="Other_pr" Type="Double" />
+          <Property Name="Nots" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Coustmer" Relationship="SyStorgeDataModel.FK_Parts_Coustmer" FromRole="Outsale" ToRole="Coustmer" />
+          <NavigationProperty Name="Parts" Relationship="SyStorgeDataModel.FK_Outsale_Parts" FromRole="Outsale" ToRole="Parts" />
+          <NavigationProperty Name="Type_Price" Relationship="SyStorgeDataModel.FK_Ty_OutParts" FromRole="Outsale" ToRole="Type_Price" />
+          <NavigationProperty Name="Units" Relationship="SyStorgeDataModel.FK_Unit_OutParts" FromRole="Outsale" ToRole="Units" />
+        </EntityType>
+        <Association Name="FK_Parts_Coustmer">
+          <End Type="SyStorgeDataModel.Coustmer" Role="Coustmer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SyStorgeDataModel.Outsale" Role="Outsale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coustmer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outsale">
+              <PropertyRef Name="Id_cost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Outsale_Parts">
+          <End Type="SyStorgeDataModel.Parts" Role="Parts" Multiplicity="0..1" />
+          <End Type="SyStorgeDataModel.Outsale" Role="Outsale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outsale">
+              <PropertyRef Name="Id_Part" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ty_OutParts">
+          <End Type="SyStorgeDataModel.Type_Price" Role="Type_Price" Multiplicity="0..1" />
+          <End Type="SyStorgeDataModel.Outsale" Role="Outsale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Price">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outsale">
+              <PropertyRef Name="Id_typ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unit_OutParts">
+          <End Type="SyStorgeDataModel.Units" Role="Units" Multiplicity="0..1" />
+          <End Type="SyStorgeDataModel.Outsale" Role="Outsale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Units">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outsale">
+              <PropertyRef Name="Id_Unit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ty_out">
+          <End Type="SyStorgeDataModel.Type_Price" Role="Type_Price" Multiplicity="0..1" />
+          <End Type="SyStorgeDataModel.Coustmer" Role="Coustmer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Price">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Coustmer">
+              <PropertyRef Name="Id_typ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ty_com">
+          <End Type="SyStorgeDataModel.Type_Price" Role="Type_Price" Multiplicity="0..1" />
+          <End Type="SyStorgeDataModel.Incoming" Role="Incoming" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Price">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incoming">
+              <PropertyRef Name="Id_typ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="View">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Part_Name" />
+            <PropertyRef Name="Allbuy" />
+            <PropertyRef Name="AllbuyPrice" />
+            <PropertyRef Name="Allsell" />
+            <PropertyRef Name="AllsellPrice" />
+            <PropertyRef Name="StoreName" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Part_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="unit_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Allbuy" Type="Int32" Nullable="false" />
+          <Property Name="AllbuyPrice" Type="Double" Nullable="false" />
+          <Property Name="Total_Parts" Type="Int32" />
+          <Property Name="Total_Pris" Type="Double" />
+          <Property Name="Allsell" Type="Int32" Nullable="false" />
+          <Property Name="AllsellPrice" Type="Double" Nullable="false" />
+          <Property Name="StoreName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SyStorgeDataModelStoreContainer" CdmEntityContainer="SyStorgeDataEntities">
+          <EntitySetMapping Name="Compart">
+            <EntityTypeMapping TypeName="SyStorgeDataModel.Compart">
+              <MappingFragment StoreEntitySet="Compart">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_coms" ColumnName="Id_coms" />
+                <ScalarProperty Name="Id_part" ColumnName="Id_part" />
+                <ScalarProperty Name="Add_parts" ColumnName="Add_parts" />
+                <ScalarProperty Name="Id_typ" ColumnName="Id_typ" />
+                <ScalarProperty Name="Add_one" ColumnName="Add_one" />
+                <ScalarProperty Name="Other_pri" ColumnName="Other_pri" />
+                <ScalarProperty Name="price_mins" ColumnName="price_mins" />
+                <ScalarProperty Name="Add_all" ColumnName="Add_all" />
+                <ScalarProperty Name="Num_mars" ColumnName="Num_mars" />
+                <ScalarProperty Name="Id_unit" ColumnName="Id_unit" />
+                <ScalarProperty Name="Nots" ColumnName="Nots" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Incoming">
+            <EntityTypeMapping TypeName="SyStorgeDataModel.Incoming">
+              <MappingFragment StoreEntitySet="Incoming">
+                <ScalarProperty Name="Id_typ" ColumnName="Id_typ" />
+                <ScalarProperty Name="other_pr" ColumnName="other_pr" />
+                <ScalarProperty Name="totle_pice" ColumnName="totle_pice" />
+                <ScalarProperty Name="totle_pice_min" ColumnName="totle_pice_min" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Incoming_Date" ColumnName="Incoming_Date" />
+                <ScalarProperty Name="Supplier_Name" ColumnName="Supplier_Name" />
+                <ScalarProperty Name="Supplier_Entity" ColumnName="Supplier_Entity" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parts">
+            <EntityTypeMapping TypeName="SyStorgeDataModel.Parts">
+              <MappingFragment StoreEntitySet="Parts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Part_Name" ColumnName="Part_Name" />
+                <ScalarProperty Name="storge_id" ColumnName="storge_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STORAGE">
+            <EntityTypeMapping TypeName="SyStorgeDataModel.STORAGE">
+              <MappingFragment StoreEntitySet="STORAGE">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+                <ScalarProperty Name="KeeperName" ColumnName="KeeperName" />
+                <ScalarProperty Name="deckTitle" ColumnName="deckTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SyStorgeDataModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Type_Price">
+            <EntityTypeMapping TypeName="SyStorgeDataModel.Type_Price">
+              <MappingFragment StoreEntitySet="Type_Price">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Units">
+            <EntityTypeMapping TypeName="SyStorgeDataModel.Units">
+              <MappingFragment StoreEntitySet="Units">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="unit_name" ColumnName="unit_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_type">
+            <EntityTypeMapping TypeName="SyStorgeDataModel.User_type">
+              <MappingFragment StoreEntitySet="User_type">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name_type" ColumnName="Name_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="SyStorgeDataModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Users_type" ColumnName="Users_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coustmer">
+            <EntityTypeMapping TypeName="SyStorgeDataModel.Coustmer">
+              <MappingFragment StoreEntitySet="Coustmer">
+                <ScalarProperty Name="Id_typ" ColumnName="Id_typ" />
+                <ScalarProperty Name="other_pr" ColumnName="other_pr" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Coustmer_Entity" ColumnName="Coustmer_Entity" />
+                <ScalarProperty Name="totle_pice" ColumnName="totle_pice" />
+                <ScalarProperty Name="totle_pice_min" ColumnName="totle_pice_min" />
+                <ScalarProperty Name="Coustmer_Name" ColumnName="Coustmer_Name" />
+                <ScalarProperty Name="Coustmer_Date" ColumnName="Coustmer_Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Outsale">
+            <EntityTypeMapping TypeName="SyStorgeDataModel.Outsale">
+              <MappingFragment StoreEntitySet="Outsale">
+                <ScalarProperty Name="Nots" ColumnName="Nots" />
+                <ScalarProperty Name="Other_pr" ColumnName="Other_pr" />
+                <ScalarProperty Name="Id_typ" ColumnName="Id_typ" />
+                <ScalarProperty Name="Sell_price_min" ColumnName="Sell_price_min" />
+                <ScalarProperty Name="Sell_all_price" ColumnName="Sell_all_price" />
+                <ScalarProperty Name="Sell_price" ColumnName="Sell_price" />
+                <ScalarProperty Name="Qut_sell" ColumnName="Qut_sell" />
+                <ScalarProperty Name="Id_Unit" ColumnName="Id_Unit" />
+                <ScalarProperty Name="Id_Part" ColumnName="Id_Part" />
+                <ScalarProperty Name="Id_cost" ColumnName="Id_cost" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View">
+            <EntityTypeMapping TypeName="SyStorgeDataModel.View">
+              <MappingFragment StoreEntitySet="View">
+                <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+                <ScalarProperty Name="AllsellPrice" ColumnName="AllsellPrice" />
+                <ScalarProperty Name="Allsell" ColumnName="Allsell" />
+                <ScalarProperty Name="Total_Pris" ColumnName="Total_Pris" />
+                <ScalarProperty Name="Total_Parts" ColumnName="Total_Parts" />
+                <ScalarProperty Name="AllbuyPrice" ColumnName="AllbuyPrice" />
+                <ScalarProperty Name="Allbuy" ColumnName="Allbuy" />
+                <ScalarProperty Name="unit_name" ColumnName="unit_name" />
+                <ScalarProperty Name="Part_Name" ColumnName="Part_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
